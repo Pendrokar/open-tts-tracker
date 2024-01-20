@@ -18,12 +18,15 @@
 
     th {
       background-color: #f2f2f2;
+      cursor: pointer;
+      vertical-align: bottom;
+      text-align: center;
     }
   </style>
 </head>
 <body>
 <h1><a href="https://pendrokar.github.io/open-tts-tracker/">open-tts-tracker</a></h1>
-      
+
 
       <h1 id="️-open-tts-tracker">🗣️ Open TTS Tracker</h1>
 
@@ -38,45 +41,45 @@ This repo will only track open source/access codebase TTS models. More motivatio
 
 
 <div>
-    <label>Toggle Columns:</label>
-    <input id="col10" onclick="toggleColumn(9)" checked />
-    <label for="col10">Processor ⚡</label>
-    <input id="col11" onclick="toggleColumn(10)" checked />
-    <label for="col11">Word pronunciation adjustment 👄</label>
-    <input id="col12" onclick="toggleColumn(11)" checked />
-    <label for="col12">Insta-clone 👥</label>
-    <input id="col13" onclick="toggleColumn(12)" checked />
-    <label for="col13">Emotional control 🎭</label>
-    <input id="col14" onclick="toggleColumn(13)" checked />
-    <label for="col14">Prompting 📖</label>
-    <input id="col15" onclick="toggleColumn(14)" checked />
-    <label for="col15">Streaming support 🌊</label>
-    <input id="col16" onclick="toggleColumn(15)" checked />
-    <label for="col16">Audio control 🎚</label>
-    <input id="col17" onclick="toggleColumn(16)" checked />
-    <label for="col17">S2S support 🦜</label>
+    <label>Toggle Columns:</label><br />
+    <input id="col10" type="checkbox" onclick="toggleColumn(9)" checked />
+    <label for="col10">Processor ⚡</label><br />
+    <input id="col11" type="checkbox" onclick="toggleColumn(10)" checked />
+    <label for="col11">Word pronunciation adjustment 👄</label><br />
+    <input id="col12" type="checkbox" onclick="toggleColumn(11)" checked />
+    <label for="col12">Insta-clone 👥</label><br />
+    <input id="col13" type="checkbox" onclick="toggleColumn(12)" checked />
+    <label for="col13">Emotional control 🎭</label><br />
+    <input id="col14" type="checkbox" onclick="toggleColumn(13)" checked />
+    <label for="col14">Prompting 📖</label><br />
+    <input id="col15" type="checkbox" onclick="toggleColumn(14)" checked />
+    <label for="col15">Streaming support 🌊</label><br />
+    <input id="col16" type="checkbox" onclick="toggleColumn(15)" checked />
+    <label for="col16">Audio control 🎚</label><br />
+    <input id="col17" type="checkbox" onclick="toggleColumn(16)" checked />
+    <label for="col17">S2S support 🦜</label><br />
 </div>
-  
+<br />
 <table id="dataTable">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>GitHub 💻</th>
-      <th>Weights ⚖</th>
-      <th>License 🧾</th>
-      <th>Fine-tune 👤</th>
-      <th>Languages</th>
-      <th>Paper 📄</th>
-      <th>Demo 🗣️</th>
-      <th>Issues 📚</th>
-      <th>Processor ⚡</th>
-      <th>Word pronunciation adjustment 👄</th>
-      <th>Insta-clone 👥</th>
-      <th>Emotional control 🎭</th>
-      <th>Prompting 📖</th>
-      <th>Streaming support 🌊</th>
-      <th>Audio control 🎚</th>
-      <th>S2S support 🦜</th>
+      <th onclick="sortTable(0)">Name ↕</th>
+      <th onclick="sortTable(1)">GitHub<br />💻</th>
+      <th onclick="sortTable(2)">Weights<br />⚖</th>
+      <th onclick="sortTable(3)">License<br />🧾</th>
+      <th onclick="sortTable(4)">Fine-tune<br />👤</th>
+      <th onclick="sortTable(5)">Languages</th>
+      <th onclick="sortTable(6)">Paper<br />📄</th>
+      <th onclick="sortTable(7)">Demo<br />🗣️</th>
+      <th onclick="sortTable(8)">Issues<br />📚</th>
+      <th onclick="sortTable(9)">Processor<br />⚡</th>
+      <th onclick="sortTable(10)">Word pronunciation adjustment<br />👄</th>
+      <th onclick="sortTable(11)">Insta-clone<br />👥</th>
+      <th onclick="sortTable(12)">Emotional control<br />🎭</th>
+      <th onclick="sortTable(13)">Prompting<br />📖</th>
+      <th onclick="sortTable(14)">Streaming support<br />🌊</th>
+      <th onclick="sortTable(15)">Audio control<br />🎚</th>
+      <th onclick="sortTable(16)">S2S support<br />🦜</th>
     </tr>
   </thead>
   <tbody>
@@ -485,7 +488,7 @@ This repo will only track open source/access codebase TTS models. More motivatio
 <script>
   function toggleColumn(index) {
     const table = document.getElementById("dataTable");
-    
+
     for (let i = 0; i < table.rows.length; i++) {
       const cell = table.rows[i].cells[index];
       if (cell.style.display === "" || cell.style.display === "table-cell") {
@@ -494,6 +497,24 @@ This repo will only track open source/access codebase TTS models. More motivatio
         cell.style.display = "table-cell";
       }
     }
+  }
+
+
+
+  function sortTable(columnIndex) {
+    const table = document.getElementById("dataTable");
+    const rows = Array.from(table.rows).slice(1); // Exclude header row
+    const isNumeric = !isNaN(parseFloat(rows[0].cells[columnIndex].textContent));
+
+    rows.sort((a, b) => {
+      const aValue = isNumeric ? parseFloat(a.cells[columnIndex].textContent) : a.cells[columnIndex].textContent;
+      const bValue = isNumeric ? parseFloat(b.cells[columnIndex].textContent) : b.cells[columnIndex].textContent;
+
+      return aValue > bValue ? 1 : -1;
+    });
+
+    table.tBodies[0].innerHTML = "";
+    rows.forEach(row => table.tBodies[0].appendChild(row));
   }
 </script>
 
