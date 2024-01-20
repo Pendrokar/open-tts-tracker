@@ -38,17 +38,23 @@ This repo will only track open source/access codebase TTS models. More motivatio
 
 
 <div>
-  <label for="toggleColumn">Toggle Column:</label>
-  <select id="toggleColumn" onchange="toggleColumn()">
-    <option val="col10">Processor ⚡</option>
-    <option val="col11">Word pronunciation adjustment 👄</option>
-    <option val="col12">Insta-clone 👥</option>
-    <option val="col13">Emotional control 🎭</option>
-    <option val="col14">Prompting 📖</option>
-    <option val="col15">Streaming support 🌊</option>
-    <option val="col16">Audio control 🎚</option>
-    <option val="col17">S2S support 🦜</option>
-  </select>
+    <label>Toggle Columns:</label>
+    <input id="col10" onclick="toggleColumn(9)" checked />
+    <label for="col10">Processor ⚡</label>
+    <input id="col11" onclick="toggleColumn(10)" checked />
+    <label for="col11">Word pronunciation adjustment 👄</label>
+    <input id="col12" onclick="toggleColumn(11)" checked />
+    <label for="col12">Insta-clone 👥</label>
+    <input id="col13" onclick="toggleColumn(12)" checked />
+    <label for="col13">Emotional control 🎭</label>
+    <input id="col14" onclick="toggleColumn(13)" checked />
+    <label for="col14">Prompting 📖</label>
+    <input id="col15" onclick="toggleColumn(14)" checked />
+    <label for="col15">Streaming support 🌊</label>
+    <input id="col16" onclick="toggleColumn(15)" checked />
+    <label for="col16">Audio control 🎚</label>
+    <input id="col17" onclick="toggleColumn(16)" checked />
+    <label for="col17">S2S support 🦜</label>
 </div>
   
 <table id="dataTable">
@@ -477,12 +483,11 @@ This repo will only track open source/access codebase TTS models. More motivatio
 </table>
 
 <script>
-  function toggleColumn() {
-    const columnIndex = document.getElementById("toggleColumn").selectedIndex;
+  function toggleColumn(index) {
     const table = document.getElementById("dataTable");
     
     for (let i = 0; i < table.rows.length; i++) {
-      const cell = table.rows[i].cells[columnIndex];
+      const cell = table.rows[i].cells[index];
       if (cell.style.display === "" || cell.style.display === "table-cell") {
         cell.style.display = "none";
       } else {
