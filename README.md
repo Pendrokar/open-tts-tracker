@@ -50,7 +50,7 @@ This is aimed as a resource to increase awareness for these models and to make i
 | Bark |  |  |  |  |  |  |  |  |
 | EmotiVoice |  |  |  |  |  |  |  |  |
 | Amphion |  |  |  |  |  |  |  |  |
-| xVASynth | CPU / CUDA | ARPAbet |  | 4-type 🎭<br />😡😃😭😯<br />per‑phoneme    |  |  | speed / pitch / energy<br />🎚<br />per‑phoneme | 🦜 |
+| xVASynth | CPU / CUDA | ARPAbet |  | 4-type 🎭<br />😡😃😭😯<br />per‑phoneme    |  |  | speed / pitch / energy / 🎭<br />🎚<br />per‑phoneme | 🦜 |
 | OverFlow TTS |  |  |  |  |  |  |  |  |
 | Neural-HMM TTS |  |  |  |  |  |  |  |  |
 | Tacotron 2 |  |  |  |  |  |  |  |  |
