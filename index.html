@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toggle Table Columns</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+<h1><a href="https://pendrokar.github.io/open-tts-tracker/">open-tts-tracker</a></h1>
+      
+
+      <h1 id="️-open-tts-tracker">🗣️ Open TTS Tracker</h1>
+
+<p>A one stop shop to track all open-access/ source TTS models as they come out. Feel free to make a PR for all those that aren’t linked here.</p>
+
+<p>This is aimed as a resource to increase awareness for these models and to make it easier for researchers, developers, and enthusiasts to stay informed about the latest advancements in the field.</p>
+
+<blockquote>
+  <p>[!NOTE]<br>
+This repo will only track open source/access codebase TTS models. More motivation for everyone to open-source! 🤗</p>
+</blockquote>
+
+
+<div>
+  <label for="toggleColumn">Toggle Column:</label>
+  <select id="toggleColumn" onchange="toggleColumn()">
+    <option val="col10">Processor ⚡</option>
+    <option val="col11">Word pronunciation adjustment 👄</option>
+    <option val="col12">Insta-clone 👥</option>
+    <option val="col13">Emotional control 🎭</option>
+    <option val="col14">Prompting 📖</option>
+    <option val="col15">Streaming support 🌊</option>
+    <option val="col16">Audio control 🎚</option>
+    <option val="col17">S2S support 🦜</option>
+  </select>
+</div>
+  
+<table id="dataTable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>GitHub 💻</th>
+      <th>Weights ⚖</th>
+      <th>License 🧾</th>
+      <th>Fine-tune 👤</th>
+      <th>Languages</th>
+      <th>Paper 📄</th>
+      <th>Demo 🗣️</th>
+      <th>Issues 📚</th>
+      <th>Processor ⚡</th>
+      <th>Word pronunciation adjustment 👄</th>
+      <th>Insta-clone 👥</th>
+      <th>Emotional control 🎭</th>
+      <th>Prompting 📖</th>
+      <th>Streaming support 🌊</th>
+      <th>Audio control 🎚</th>
+      <th>S2S support 🦜</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>XTTS</td>
+      <td><a href="https://github.com/coqui-ai/TTS">Repo</a></td>
+      <td><a href="https://huggingface.co/coqui/XTTS-v2">🤗 Hub</a></td>
+      <td><a href="https://coqui.ai/cpml">CPML</a></td>
+      <td><a href="https://docs.coqui.ai/en/latest/models/xtts.html#training">Yes</a></td>
+      <td>Multilingual</td>
+      <td><a href="https://erogol.substack.com/p/xttsv2-notes">Technical notes</a></td>
+      <td><a href="https://huggingface.co/spaces/coqui/xtts">🤗 Space</a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>TorToiSe TTS</td>
+      <td><a href="https://github.com/neonbjb/tortoise-tts">Repo</a></td>
+      <td><a href="https://huggingface.co/jbetker/tortoise-tts-v2">🤗 Hub</a></td>
+      <td><a href="https://github.com/neonbjb/tortoise-tts/blob/main/LICENSE">Apache 2.0</a></td>
+      <td><a href="https://git.ecker.tech/mrq/tortoise-tts">Yes</a></td>
+      <td>English</td>
+      <td><a href="https://arxiv.org/abs/2305.07243">Technical report</a></td>
+      <td><a href="https://huggingface.co/spaces/Manmay/tortoise-tts">🤗 Space</a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>VITS/ MMS-TTS</td>
+      <td><a href="https://github.com/huggingface/transformers/tree/7142bdfa90a3526cfbed7483ede3afbef7b63939/src/transformers/models/vits">Repo</a></td>
+      <td><a href="https://huggingface.co/kakao-enterprise">🤗 Hub</a> / <a href="https://huggingface.co/models?search=mms-tts">MMS</a></td>
+      <td><a href="https://github.com/huggingface/transformers/blob/main/LICENSE">Apache 2.0</a></td>
+      <td><a href="https://github.com/ylacombe/finetune-hf-vits">Yes</a></td>
+      <td>English</td>
+      <td><a href="https://arxiv.org/abs/2106.06103">Paper</a></td>
+      <td><a href="https://huggingface.co/spaces/kakao-enterprise/vits">🤗 Space</a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Pheme</td>
+      <td><a href="https://github.com/PolyAI-LDN/pheme">Repo</a></td>
+      <td><a href="https://huggingface.co/PolyAI/pheme">🤗 Hub</a></td>
+      <td><a href="https://github.com/PolyAI-LDN/pheme/blob/main/LICENSE">CC-BY</a></td>
+      <td><a href="https://github.com/PolyAI-LDN/pheme#training">Yes</a></td>
+      <td>English</td>
+      <td><a href="https://arxiv.org/abs/2401.02839">Paper</a></td>
+      <td><a href="https://huggingface.co/spaces/PolyAI/pheme">🤗 Space</a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>OpenVoice</td>
+      <td><a href="https://github.com/myshell-ai/OpenVoice">Repo</a></td>
+      <td><a href="https://huggingface.co/myshell-ai/OpenVoice">🤗 Hub</a></td>
+      <td><a href="https://github.com/myshell-ai/OpenVoice/blob/main/LICENSE">CC-BY-NC 4.0</a></td>
+      <td>No</td>
+      <td>ZH + EN</td>
+      <td><a href="https://arxiv.org/abs/2312.01479">Paper</a></td>
+      <td><a href="https://huggingface.co/spaces/myshell-ai/OpenVoice">🤗 Space</a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>IMS-Toucan</td>
+      <td><a href="https://github.com/DigitalPhonetics/IMS-Toucan">Repo</a></td>
+      <td><a href="https://github.com/DigitalPhonetics/IMS-Toucan/tags">GH release</a></td>
+      <td><a href="https://github.com/DigitalPhonetics/IMS-Toucan/blob/ToucanTTS/LICENSE">Apache 2.0</a></td>
+      <td><a href="https://github.com/DigitalPhonetics/IMS-Toucan#build-a-toucantts-pipeline">Yes</a></td>
+      <td>Multilingual</td>
+      <td><a href="https://arxiv.org/abs/2206.12229">Paper</a></td>
+      <td><a href="https://huggingface.co/spaces/Flux9665/IMS-Toucan">🤗 Space</a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Matcha-TTS</td>
+      <td><a href="https://github.com/shivammehta25/Matcha-TTS">Repo</a></td>
+      <td><a href="https://drive.google.com/drive/folders/17C_gYgEHOxI5ZypcfE_k1piKCtyR0isJ">GDrive</a></td>
+      <td><a href="https://github.com/shivammehta25/Matcha-TTS/blob/main/LICENSE">MIT</a></td>
+      <td><a href="https://github.com/shivammehta25/Matcha-TTS/tree/main#train-with-your-own-dataset">Yes</a></td>
+      <td>English</td>
+      <td><a href="https://arxiv.org/abs/2309.03199">Paper</a></td>
+      <td><a href="https://huggingface.co/spaces/shivammehta25/Matcha-TTS">🤗 Space</a></td>
+      <td>GPL-licensed phonemizer</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>pflowTTS</td>
+      <td><a href="https://github.com/p0p4k/pflowtts_pytorch">Unofficial Repo</a></td>
+      <td><a href="https://drive.google.com/drive/folders/1x-A2Ezmmiz01YqittO_GLYhngJXazaF0">GDrive</a></td>
+      <td><a href="https://github.com/p0p4k/pflowtts_pytorch/blob/master/LICENSE">MIT</a></td>
+      <td><a href="https://github.com/p0p4k/pflowtts_pytorch#instructions-to-run">Yes</a></td>
+      <td>English</td>
+      <td><a href="https://openreview.net/pdf?id=zNA7u7wtIN">Paper</a></td>
+      <td>Not Available</td>
+      <td>GPL-licensed phonemizer</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>StyleTTS 2</td>
+      <td><a href="https://github.com/yl4579/StyleTTS2">Repo</a></td>
+      <td><a href="https://huggingface.co/yl4579/StyleTTS2-LibriTTS/tree/main">🤗 Hub</a></td>
+      <td><a href="https://github.com/yl4579/StyleTTS2/blob/main/LICENSE">MIT</a></td>
+      <td><a href="https://github.com/yl4579/StyleTTS2#finetuning">Yes</a></td>
+      <td>English</td>
+      <td><a href="https://arxiv.org/abs/2306.07691">Paper</a></td>
+      <td><a href="https://huggingface.co/spaces/styletts2/styletts2">🤗 Space</a></td>
+      <td>GPL-licensed phonemizer</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>VALL-E</td>
+      <td><a href="https://github.com/enhuiz/vall-e">Unofficial Repo</a></td>
+      <td>Not Available</td>
+      <td><a href="https://github.com/enhuiz/vall-e/blob/main/LICENSE">MIT</a></td>
+      <td><a href="https://github.com/enhuiz/vall-e#get-started">Yes</a></td>
+      <td>NA</td>
+      <td><a href="https://arxiv.org/abs/2301.02111">Paper</a></td>
+      <td>Not Available</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>HierSpeech++</td>
+      <td><a href="https://github.com/sh-lee-prml/HierSpeechpp">Repo</a></td>
+      <td><a href="https://drive.google.com/drive/folders/1-L_90BlCkbPyKWWHTUjt5Fsu3kz0du0w">GDrive</a></td>
+      <td><a href="https://github.com/sh-lee-prml/HierSpeechpp/blob/main/LICENSE">CC-BY-NC-SA 4.0</a></td>
+      <td>No</td>
+      <td>KR + EN</td>
+      <td><a href="https://arxiv.org/abs/2311.12454">Paper</a></td>
+      <td><a href="https://huggingface.co/spaces/LeeSangHoon/HierSpeech_TTS">🤗 Space</a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Bark</td>
+      <td><a href="https://github.com/huggingface/transformers/tree/main/src/transformers/models/bark">Repo</a></td>
+      <td><a href="https://huggingface.co/suno/bark">🤗 Hub</a></td>
+      <td><a href="https://github.com/suno-ai/bark/blob/main/LICENSE">MIT</a></td>
+      <td>No</td>
+      <td>Multilingual</td>
+      <td><a href="https://arxiv.org/abs/2209.03143">Paper</a></td>
+      <td><a href="https://huggingface.co/spaces/suno/bark">🤗 Space</a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>EmotiVoice</td>
+      <td><a href="https://github.com/netease-youdao/EmotiVoice">Repo</a></td>
+      <td><a href="https://drive.google.com/drive/folders/1y6Xwj_GG9ulsAonca_unSGbJ4lxbNymM">GDrive</a></td>
+      <td><a href="https://github.com/netease-youdao/EmotiVoice/blob/main/LICENSE">Apache 2.0</a></td>
+      <td><a href="https://github.com/netease-youdao/EmotiVoice/wiki/Voice-Cloning-with-your-personal-data">Yes</a></td>
+      <td>ZH + EN</td>
+      <td>Not Available</td>
+      <td>Not Available</td>
+      <td>Separate <a href="https://github.com/netease-youdao/EmotiVoice/blob/main/EmotiVoice_UserAgreement_%E6%98%93%E9%AD%94%E5%A3%B0%E7%94%A8%E6%88%B7%E5%8D%8F%E8%AE%AE.pdf">GUI agreement</a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Amphion</td>
+      <td><a href="https://github.com/open-mmlab/Amphion">Repo</a></td>
+      <td><a href="https://huggingface.co/amphion">🤗 Hub</a></td>
+      <td><a href="https://github.com/open-mmlab/Amphion/blob/main/LICENSE">MIT</a></td>
+      <td>No</td>
+      <td>Multilingual</td>
+      <td><a href="https://arxiv.org/abs/2312.09911">Paper</a></td>
+      <td><a href="https://huggingface.co/amphion">🤗 Space</a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>xVASynth</td>
+      <td><a href="https://github.com/DanRuta/xVA-Synth">Repo</a></td>
+      <td><a href="https://github.com/DanRuta/xVA-Synth/tree/master/python/xvapitch/speaker_rep">GH commit</a></td>
+      <td><a href="https://github.com/DanRuta/xVA-Synth/blob/master/LICENSE.md">GPL-3.0</a></td>
+      <td><a href="https://github.com/DanRuta/xva-trainer">Yes</a></td>
+      <td>Multilingual</td>
+      <td><a href="https://arxiv.org/abs/2009.14153">Paper</a></td>
+      <td>Not Available</td>
+      <td>Copyright materials used for training.</td>
+      <td>CPU / CUDA</td>
+      <td>ARPAbet</td>
+      <td>&nbsp;</td>
+      <td>4-type<br>😡😃<br>😭😯 per-phoneme</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>speed / pitch / energy<br>🎚<br>per-phoneme</td>
+      <td>🦜</td>
+    </tr>
+    <tr>
+      <td>OverFlow TTS</td>
+      <td><a href="https://github.com/shivammehta25/OverFlow">Repo</a></td>
+      <td><a href="https://github.com/shivammehta25/OverFlow/releases">GitHub</a></td>
+      <td><a href="https://github.com/shivammehta25/OverFlow/blob/main/LICENSE">MIT</a></td>
+      <td><a href="https://github.com/shivammehta25/OverFlow/tree/main?tab=readme-ov-file#setup-and-training-using-lj-speech">Yes</a></td>
+      <td>English</td>
+      <td><a href="https://arxiv.org/abs/2211.06892">Paper</a></td>
+      <td><a href="https://shivammehta25.github.io/OverFlow/">GH Pages</a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Neural-HMM TTS</td>
+      <td><a href="https://github.com/shivammehta25/Neural-HMM">Repo</a></td>
+      <td><a href="https://github.com/shivammehta25/Neural-HMM/releases">GitHub</a></td>
+      <td><a href="https://github.com/shivammehta25/Neural-HMM/blob/main/LICENSE">MIT</a></td>
+      <td><a href="https://github.com/shivammehta25/Neural-HMM?tab=readme-ov-file#setup-and-training-using-lj-speech">Yes</a></td>
+      <td>English</td>
+      <td><a href="https://arxiv.org/abs/2108.13320">Paper</a></td>
+      <td><a href="https://shivammehta25.github.io/Neural-HMM/">GH Pages</a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Tacotron 2</td>
+      <td><a href="https://github.com/NVIDIA/tacotron2">Unofficial Repo</a></td>
+      <td><a href="https://drive.google.com/file/d/1c5ZTuT7J08wLUoVZ2KkUs_VdZuJ86ZqA/view">GDrive</a></td>
+      <td><a href="https://github.com/NVIDIA/tacotron2/blob/master/LICENSE">BSD-3</a></td>
+      <td><a href="https://github.com/NVIDIA/tacotron2/tree/master?tab=readme-ov-file#training">Yes</a></td>
+      <td>English</td>
+      <td><a href="https://arxiv.org/abs/1712.05884">Paper</a></td>
+      <td><a href="https://google.github.io/tacotron/publications/tacotron2/">Webpage</a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Glow-TTS</td>
+      <td><a href="https://github.com/jaywalnut310/glow-tts">Repo</a></td>
+      <td><a href="https://drive.google.com/file/d/1JiCMBVTG4BMREK8cT3MYck1MgYvwASL0/view">GDrive</a></td>
+      <td><a href="https://github.com/jaywalnut310/glow-tts/blob/master/LICENSE">MIT</a></td>
+      <td><a href="https://github.com/jaywalnut310/glow-tts?tab=readme-ov-file#2-pre-requisites">Yes</a></td>
+      <td>English</td>
+      <td><a href="https://arxiv.org/abs/2005.11129">Paper</a></td>
+      <td><a href="https://jaywalnut310.github.io/glow-tts-demo/index.html">GH Pages</a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Silero</td>
+      <td><a href="https://github.com/snakers4/silero-models">Repo</a></td>
+      <td><a href="https://github.com/snakers4/silero-models/blob/master/models.yml">GH links</a></td>
+      <td><a href="https://github.com/snakers4/silero-models/blob/master/LICENSE">CC BY-NC-SA</a></td>
+      <td><a href="https://github.com/snakers4/silero-models/discussions/78">No</a></td>
+      <td>EM + DE + ES + EA</td>
+      <td>Not Available</td>
+      <td>Not Available</td>
+      <td><a href="https://github.com/snakers4/silero-models/wiki/Licensing-and-Tiers">Non Commercial</a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>MahaTTS</td>
+      <td><a href="https://github.com/dubverse-ai/MahaTTS">Repo</a></td>
+      <td><a href="https://huggingface.co/Dubverse/MahaTTS">🤗 Hub</a></td>
+      <td><a href="https://github.com/dubverse-ai/MahaTTS/blob/main/LICENSE">Apache 2.0</a></td>
+      <td>No</td>
+      <td>English, Hindi, Indian English, Bengali, Tamil, Telugu, Punjabi, Marathi, Gujarati, Assamese</td>
+      <td>Not Available</td>
+      <td><a href="https://github.com/dubverse-ai/MahaTTS/blob/main/README.md#sample-outputs">Recordings</a>, <a href="https://colab.research.google.com/drive/1qkZz2km-PX75P0f6mUb2y5e-uzub27NW?usp=sharing">Colab</a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+  function toggleColumn() {
+    const columnIndex = document.getElementById("toggleColumn").selectedIndex;
+    const table = document.getElementById("dataTable");
+    
+    for (let i = 0; i < table.rows.length; i++) {
+      const cell = table.rows[i].cells[columnIndex];
+      if (cell.style.display === "" || cell.style.display === "table-cell") {
+        cell.style.display = "none";
+      } else {
+        cell.style.display = "table-cell";
+      }
+    }
+  }
+</script>
+
+</body>
+</html>
