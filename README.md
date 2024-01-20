@@ -31,6 +31,35 @@ This is aimed as a resource to increase awareness for these models and to make i
 | Silero | [Repo](https://github.com/snakers4/silero-models) | [GH links](https://github.com/snakers4/silero-models/blob/master/models.yml) | [CC BY-NC-SA](https://github.com/snakers4/silero-models/blob/master/LICENSE) | [No](https://github.com/snakers4/silero-models/discussions/78) | EM + DE + ES + EA | Not Available | Not Available | [Non Commercial](https://github.com/snakers4/silero-models/wiki/Licensing-and-Tiers) |  |  |  |  |  |  |  |  |
 | MahaTTS | [Repo](https://github.com/dubverse-ai/MahaTTS) | [🤗 Hub](https://huggingface.co/Dubverse/MahaTTS) | [Apache 2.0](https://github.com/dubverse-ai/MahaTTS/blob/main/LICENSE) | No | English, Hindi, Indian English, Bengali, Tamil, Telugu, Punjabi, Marathi, Gujarati, Assamese | Not Available | [Recordings](https://github.com/dubverse-ai/MahaTTS/blob/main/README.md#sample-outputs), [Colab](https://colab.research.google.com/drive/1qkZz2km-PX75P0f6mUb2y5e-uzub27NW?usp=sharing) |  |  |  |  |  |  |  |  |  |
 
+<details>
+	<summary><b>Capabilities Table</b></summary>
+
+| Name | Processor ⚡ | Word pronunciation adjustment 👄 | Insta-clone 👥 | Emotional control 🎭 | Prompting 📖 | Streaming support 🌊 | Audio control 🎚 | S2S support 🦜 |
+|---|---|---|---|---|---|---|---|---|
+| XTTS |  |  |  |  |  |  |  |  |
+| TorToiSe TTS |  |  |  |  |  |  |  |  |
+| VITS/ MMS-TTS |  |  |  |  |  |  |  |  |
+| Pheme |  |  |  |  |  |  |  |  |
+| OpenVoice |  |  |  |  |  |  |  |  |
+| IMS-Toucan |  |  |  |  |  |  |  |  |
+| Matcha-TTS |  |  |  |  |  |  |  |  |
+| pflowTTS |  |  |  |  |  |  |  |  |
+| StyleTTS 2 |  |  |  |  |  |  |  |  |
+| VALL-E |  |  |  |  |  |  |  |  |
+| HierSpeech++ |  |  |  |  |  |  |  |  |
+| Bark |  |  |  |  |  |  |  |  |
+| EmotiVoice |  |  |  |  |  |  |  |  |
+| Amphion |  |  |  |  |  |  |  |  |
+| xVASynth | CPU / CUDA | ARPAbet |  | 4-type 🎭<br />😡😃😭😯<br />per‑phoneme    |  |  | speed / pitch / energy<br />🎚<br />per‑phoneme | 🦜 |
+| OverFlow TTS |  |  |  |  |  |  |  |  |
+| Neural-HMM TTS |  |  |  |  |  |  |  |  |
+| Tacotron 2 |  |  |  |  |  |  |  |  |
+| Glow-TTS |  |  |  |  |  |  |  |  |
+| Silero |  |  |  |  |  |  |  |  |
+| MahaTTS |  |  |  |  |  |  |  |  |
+
+</details>
+
 ## How can you help?
 
 Help make this list more complete. Create demos on the Hugging Face Hub and link them here :)
